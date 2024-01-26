@@ -28,6 +28,11 @@ class Player(pygame.sprite.Sprite):
         super(Player, self).__init__()
         self.x = x
         self.y = y
+        self.image = pygame.Surface((5, 30), pygame.SRCALPHA, 32)
+        self.image = self.image.convert_alpha()
+        self.rect_center = (self.x, self.y)
+        pygame.draw.rect(self.image, (255, 255, 255, 0), pygame.Rect(self.x, self.y, 5, 30))
+        self.rect = self.image.get_rect(center = (self.x, self.y))
 
 
 while True:
@@ -37,8 +42,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-    
-
+   
 
 
     # Blits all surfaces to screen
