@@ -33,7 +33,28 @@ class Player(pygame.sprite.Sprite):
         self.rect_center = (self.x, self.y)
         pygame.draw.rect(self.image, (255, 255, 255, 0), pygame.Rect(self.x, self.y, 5, 30))
         self.rect = self.image.get_rect(center = (self.x, self.y))
+        self.deltay = 0
 
+
+    def move_down(self):
+        if self.y < 600 and self.y >0:
+            self.deltay =5 
+        else:
+            self.deltay = -5
+        self.y += self.deltay
+        self.rect_center = (self.x, self.y)
+        # pygame.draw.rect(self.image, (255, 255, 255, 0), pygame.Rect(self.x, self.y, 5, 30))
+        # self.rect = self.image.get_rect(center = (self.x, self.y))
+
+    def move_up(self):
+        if self.y > 0:
+            self.deltay =5 
+        else:
+            self.deltay = -5
+        self.y += self.deltay
+        self.rect_center = (self.x, self.y)
+        # pygame.draw.rect(self.image, (255, 255, 255, 0), pygame.Rect(self.x, self.y, 5, 30))
+        # self.rect = self.image.get_rect(center = (self.x, self.y))
 
 while True:
     #Event loop - Looks for for user input which could include: key presses, mouse movement, mouse clicks, etc.
