@@ -112,10 +112,10 @@ while True:
             p2.move_up()
         if event.key == pygame.K_DOWN:
             p2.move_down()
-        if event.key == K_a:
+        if event.key == pygame.K_a:
             print('s')
             p1.move_up()
-        if event.key == K_s:
+        if event.key == pygame.K_s:
             p1.move_down()
 
     keys = pygame.key.get_pressed()
